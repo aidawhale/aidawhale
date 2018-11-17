@@ -1,4 +1,4 @@
-@import url("font-awesome.min.css");
+@import url("https://use.fontawesome.com/releases/v5.5.0/css/all.css");
 @import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,400italic,700,900");
 
 /*
@@ -1655,7 +1655,7 @@ input, select, textarea {
 		input[type="reset"]:hover,
 		button:hover,
 		.button:hover {
-			background-color: #f98780;
+			background-color: #4fa486;
 		}
 
 		input[type="button"].large,
@@ -1672,7 +1672,7 @@ input, select, textarea {
 		input[type="reset"].style1,
 		button.style1,
 		.button.style1 {
-			background: #e97770 url("images/overlay.png");
+			background: #4fa486 url("images/overlay.png");
 			color: #fff;
 		}
 
@@ -1681,7 +1681,7 @@ input, select, textarea {
 			input[type="reset"].style1:hover,
 			button.style1:hover,
 			.button.style1:hover {
-				background-color: #f98780;
+				background-color: #5bb696;
 			}
 
 			input[type="button"].style1:active,
@@ -1689,7 +1689,7 @@ input, select, textarea {
 			input[type="reset"].style1:active,
 			button.style1:active,
 			.button.style1:active {
-				background-color: #d96760;
+				background-color: #459177;
 			}
 
 		input[type="button"].style2,
@@ -1741,6 +1741,31 @@ input, select, textarea {
 			button.style3:active,
 			.button.style3:active {
 				background-color: #1f232b;
+			}
+			
+		input[type="button"].style4,
+		input[type="submit"].style4,
+		input[type="reset"].style4,
+		button.style4,
+		.button.style4 {
+			background: #676d78 url("images/overlay.png");
+			color: #fff;
+		}
+
+			input[type="button"].style4:hover,
+			input[type="submit"].style4:hover,
+			input[type="reset"].style4:hover,
+			button.style4:hover,
+			.button.style4:hover {
+				background-color: #8a91a0;
+			}
+
+			input[type="button"].style4:active,
+			input[type="submit"].style4:active,
+			input[type="reset"].style4:active,
+			button.style4:active,
+			.button.style4:active {
+				background-color: #4e5056;
 			}
 
 /* List */
@@ -1850,7 +1875,7 @@ input, select, textarea {
 		}
 
 		.feature-list h3 {
-			color: #e97770 !important;
+			color: #4fa486 !important;
 			margin: -0.35em 0 0.75em 0;
 			font-size: 1.15em;
 			letter-spacing: 0.05em;
@@ -1869,6 +1894,10 @@ input, select, textarea {
 				position: absolute;
 				left: 0;
 				margin-top: -0.5em;
+			}
+
+			.feature-list h3 > span {
+				font-family: 'Source Sans Pro', sans-serif;
 			}
 
 		.feature-list.small section {
@@ -1987,13 +2016,13 @@ input, select, textarea {
 			}
 
 		.wrapper.style1 {
-			background: #e97770 url("images/overlay.png");
+			background: #7fd3b6 url("images/overlay.png");
 			color: #eee;
 			color: rgba(255, 255, 255, 0.75);
 		}
 
 			.wrapper.style1 .title {
-				background: #e97770 url("images/overlay.png");
+				background: #7fd3b6 url("images/overlay.png");
 				color: #fff;
 			}
 
@@ -2020,6 +2049,19 @@ input, select, textarea {
 			}
 
 			.wrapper.style3 .image {
+				border: solid 10px #fff;
+			}
+
+		.wrapper.style4 { /* 3d4249 befff3 */
+			background: #f8eaac url("images/overlay.png");
+		}
+
+			.wrapper.style4 .title {
+				background: #f8eaac url("images/overlay.png");
+				color: #484d55;
+			}
+
+			.wrapper.style4 .image {
 				border: solid 10px #fff;
 			}
 
@@ -2138,6 +2180,11 @@ input, select, textarea {
 					outline: 0;
 				}
 
+				#nav > ul > li > ul > li >ul > li > a, #nav > ul > li > ul > li >ul > li > span {
+					font-size: 0.8em;
+					text-transform: none;
+				}
+
 				#nav > ul > li:hover > a {
 					color: #fff;
 				}
@@ -2200,7 +2247,11 @@ input, select, textarea {
 		padding-bottom: 8em;
 		text-align: center;
 	}
-
+		
+		#intro span.style4, #intro p.style1.dark, #intro p.style2.dark, #intro p.style3.dark {
+			color: #434851;
+		}
+		
 		#intro p.style1 {
 			font-size: 1.5em;
 			letter-spacing: 0.075em;
@@ -2210,7 +2261,7 @@ input, select, textarea {
 			font-weight: 700;
 			color: #fff;
 			border-radius: 0.35em;
-			box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.25);
+			box-shadow: inset 0px 0px 1px 1px rgba(255, 255, 255, 0.394);
 			font-size: 2.75em;
 			letter-spacing: 0.075em;
 			line-height: 1.35em;
@@ -2246,7 +2297,7 @@ input, select, textarea {
 	}
 
 		#highlights .highlight h3 {
-			color: #e97770;
+			color: #4fa486;
 			margin: 0 0 0.75em 0;
 			font-size: 1.15em;
 			letter-spacing: 0.05em;
@@ -2696,6 +2747,11 @@ input, select, textarea {
 
 				#navPanel .depth-0 {
 					color: #fff;
+				}
+
+				#navPanel .depth-2 {
+					font-size: 0.95em;
+					text-transform: none;
 				}
 
 			body.navPanel-visible #page-wrapper {
