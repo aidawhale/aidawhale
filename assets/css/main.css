@@ -1439,10 +1439,10 @@ input, select, textarea {
 
 /* Section/Article */
 
-	section,
+	/* section,
 	article {
 		margin: 0 0 4em 0;
-	}
+	} */
 
 	section > :last-child,
 	article > :last-child,
@@ -2017,7 +2017,7 @@ input, select, textarea {
 
 		.wrapper.style1 {
 			background: #7fd3b6 url("images/overlay.png");
-			color: #eee;
+			/* color: #eee; */
 			color: rgba(255, 255, 255, 0.75);
 		}
 
@@ -2330,6 +2330,7 @@ input, select, textarea {
 		#footer form textarea {
 			background: #ccc;
 			box-shadow: none;
+			height: 100%;
 		}
 
 			#footer form input[type="text"]:focus,

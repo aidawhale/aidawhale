@@ -1,0 +1,280 @@
+<!DOCTYPE HTML> <!-- elemento que especifica el tipo de pagina que se puede leer a continuacion -->
+<!--
+	Escape Velocity by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+
+    Header photo by Alyssa Graham (https://unsplash.com/@alyssakayegraham) on Unsplash (https://unsplash.com/photos/9T5LKggUkzE)
+    MailTo using https://github.com/formspree/formspree
+    Parallax effect using https://github.com/markdalgleish/stellar.js
+
+	WebPage modified and customized by @aidaWhale (https://aidawhale.github.io/)
+
+-->
+<html lang="en">
+	<head> <!-- informacion interna y enlaces a recursos de la pagina -->
+        <title>Aida Whale</title> <!-- pone un nombre por defecto a la pestaña en la que se renderiza la pagina -->
+        <link rel="shortcut icon" type="image/png" href="images/faviconmolab.png"> <!-- aqui se especifica un icono para mostrar en la pestaña de la pagina al lado del nombre -->
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" /> <!-- referencia a los ficheros CSS usados en esta web -->
+		<link rel="stylesheet" href="assets/css/custom.css" />
+		<link rel="stylesheet" href="assets/css/igm.css" />
+    </head>
+    <header class="wrapper igm"> <!-- cabecera de la pagina -->
+        <nav id="nav"> <!-- seccion de la pagina que permite navegar entre las otras paginas y secciones disponibles en la web -->
+            <!-- NOTA: debido a que la pagina es 'responsive' este elemento puede estar oculto y ser reemplazado por otro dinamicamente (ver 'main.js') si la ventana es demasiado estrecha. Para poder verlo de las dos formas se recomienda reajusatar el ancho de la ventana para ver como cambia -->
+            <ul> <!-- lista que muestra las diferentes paginas y secciones con enlaces a cada una de ellas. NOTA: la pagina todavia esta en construccion, por eso todas referencian a la pagina principal, detallando la seccion en la que se encuentran -->
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html#about">About</a></li>
+                <li><a href="index.html#experience">Experience</a></li>
+                <li><a href="index.html#projects">Projects</a>
+                    <ul>
+                        <li><a href="index.html#molab">MOLAB</a></li>
+                        <li><a href="index.html#beltane">Beltane Games</a></li>
+                        <li><a href="index.html#hellosisters">Hello Sisters!</a></li>
+                        <li><a href="index.html#personalproj">Personal Projects</a>
+                            <ul>
+                                <li><a href="#tetris">Tetris</a></li>
+                                <li class="current"><a href="#html5">HTML5</a></li>
+                                <li><a href="#wip">Work in progress</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+
+        <section id="logo"> <!-- seccion de la cabecera que muestra informacion sobre la autora -->
+            <span id="anchor" class="fas fa-anchor"></span> <!-- icono de un ancla. A lo largo de la pagina aparecen otros iconos de este tipo. Son añadidos usando 'FontAwesome', al que se hace referencia dentro del fichero 'main.css' -->
+            <h1><a href="#">Aida Whale</a></h1>
+            <p>MSc Computer Science Engineer</p>
+        </section>
+    </header>
+    
+    <body class="homepage is-preload"> <!-- cuerpo de la pagina -->
+        <!-- el cuerpo de la pagina esta dividido en secciones usando el tag 'article'. Cada uno se estos elementos tiene une estilo comun (definido en los ficheros CSS), pero cambiando los colores para resaltar el paso de una seccion a otra -->
+            <!-- Intro -->
+            <article id="intro" class="wrapper style1"> <!-- seccion de la pagina donde se explica el proposito de la practica -->
+                <div class="title">Introduction</div>
+                <div class="container">
+                    <h1 class="dark">HTML5 assignment</h1>
+                    <p class="dark">In this assignment it is going to be used HTML5 with 
+                        of its characteristics in order to make a web page</p>
+                </div>
+            </article>
+            <!-- Video -->
+            <article id="article2" class="wrapper style2"> <!-- seccion de la pagina que contiene un video -->
+                <div class="title">Video player</div>
+                <div class="container">
+                    <h1>Here you can find a video with a dynamic ambient light.</h1>
+                    <p>You can modify the opacity of the video:</p>
+                    <p>
+                        <input type="range" id="videoopacity" name="videoopacity"  min="0" max="1" step="0.1" value="1" onchange="opacityChanged();"> <!-- input tipo 'range' que permite escoger un valor entre 0 y 1 para cambiar la opacidad del video. Cuando se modifica el valor del slider se pasaria a ejecutar la funcion especificada con el tag 'onclick', que accede al parametro 'opacity' del video para modificarlo de acuerdo al valor seleccionado en el 'slider' -->
+                        <label for="videoopacity">Opacity</label>
+                    </p>
+                    <p>You can activate or deactivate the ambient light here:</p>
+                    <p>
+                        <label class="switch"> <!-- Rounded switch -->
+                            <input type="checkbox" id="ambientLightCheckbox" onchange="ambientLightChanged(this)"> <!-- input tipo 'checkbox' para activar o desactivar la luz ambiental del video. No se muestra como un 'checkbox' por defecto porque se le ha dado otro formato usando CSS, añadiendo capas para cambiarle la apariencia y darle el efecto de animacion cuando se activa o desactiva -->
+                            <span class="slider round"></span>
+                        </label>
+                    </p> 
+                    <section class="videocontainer">
+                        <video id="videoplayer" autoplay loop data-ambient> <!-- contenedor del video -->
+                            <source src="/images/demo.mp4" type="video/mp4"> <!-- fuente del video. En caso de tener un video en diferentes formatos (.ogg, .webm, etc) se podrian añadir con otros tags 'source' debajo de este. De esa forma en caso de no poder acceder a uno, el navegador iria probando con las sigiuentes fuentes de video -->
+                        </video>
+                        <p>Video source: Dartmoor from <a href="http://www.james-watson.net/">James Watson</a>.</p> <!-- pie de video. Informacion sobre el autor del video -->
+                    </section>
+
+                </div>
+            </article>
+            <!-- picture puzzle -->
+            <article id="article3" class="wrapper style3"> <!-- seccion de la pagina que contiene un puzzle -->
+                <div class="title">Picture puzzle</div>
+                <div class="container">
+                    <h1>In this section you can play and try to solve some kitten puzzles.</h1>
+                    <p>You can change the picture selecting another one at the bottom.</p>
+                </div>
+                <div id="puzzleContainer" class="container"> <!-- div donde se añadira el puzzle. Se crea dinamicamente, por lo que aqui no aparecen todas las partes necesarias. Para ver ese codigo es necesario abrir el fichero en un navegador -->
+                    <div id="canvas" class="col-xs-12 col-sm-6"></div> <!-- div que contrndra las piezas del puzzle -->
+                    <div id="previews" class="col-xs-12 col-sm-6"></div> <!-- div con las diferentes imagenes que se podran intercambiar -->
+                </div>
+            </article>
+            <!-- scrolling image -->
+            <article id="article3" class="wrapper style2">
+                <div class="title">Parallax effect</div>
+                <div class="container">
+                    <h1>A parallax scrolling effect</h1>
+                    <h2>A parallax scrolling effect is caused when the the background content is moved 
+                        at a different speed than the foreground content while scrolling</h2>
+                    <p>In this case, the background content is an image set as a <i>div's background-image url</i>, 
+                        this means that there are two <i>div</i> elements, one inside the other. The "container" div
+                        has the background image, and the second div has the content, that scrolls normally.
+                    </p>
+                    <p>In other to achieve this effect, I used the <a href="https://github.com/markdalgleish/stellar.js">Stellar.js</a> file.</p>
+                    <div id="parallax" class="parallax animated" 
+                        style="background-image: url(/images/unsplash/alyssa-graham-1146319-unsplash.jpg);" 
+                        data-stellar-background-ratio="0.5"> <!-- div que contiene la imagen de fondo -->
+                        <div class="overlay"></div>
+                        <div class="parallax-narrow-content"> <!-- div que contiene el texto -->
+                            <div class="row parallax-row">
+                                <div class="col-xs-3 text-center parallax-box parallax-box">
+                                    <span class="parallax">365</span>
+                                    <span class="parallax-label">Days</span>
+                                </div>
+                                <div class="col-xs-3 text-center parallax-box parallax-box">
+                                    <span class="parallax">52</span>
+                                    <span class="parallax-label">Weeks</span>
+                                </div>
+                                <div class="col-xs-3 text-center parallax-box parallax-box">
+                                    <span class="parallax">12</span>
+                                    <span class="parallax-label">Months</span>
+                                </div>
+                                <div class="col-xs-3 text-center parallax-box parallax-box">
+                                    <span class="parallax">1</span>
+                                    <span class="parallax-label">Year</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </article>
+            <!-- SVG image -->
+            <article id="article3" class="wrapper style3">
+                <div class="title">SVG image</div>
+                <div class="container">
+                    <h1>In this section you can see some SVG images</h1>
+                    <h2>Here there are two SVG stars!</h2>
+                    <p>As you can see, the second star is going crazy. This effect was achieved by aplying a <i>@keyframe</i> 
+                        parameter in de CSS and then adding some rotation transforms:</p>
+                </div>
+                <div class="container svg-container">
+                    <svg width="200" height="205"> <!-- SVG con la primera estrella -->
+                        <polygon points="100,10 40,198 190,78 10,78 160,198"
+                            style="fill:red; stroke:black; stroke-width:5; opacity:0.5; fill-rule:evenodd;" />
+                    </svg>
+                    <svg width="200" height="205" class="animate-this"> <!-- SVG con la estrella que rota. Al tener la clase 'animate-this', se le aplican los contenidos y transformaciones del CSS asociados a esa clase -->
+                            <polygon points="100,10 40,198 190,78 10,78 160,198"
+                                style="fill:red; stroke:black; stroke-width:5; opacity:0.5; fill-rule:evenodd;" />
+                    </svg>
+                </div>
+                <div class="container">
+                    <h2>Here you can see another svg image. </h2>
+                    <p>This one is more complex than the previous one: 
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 56 28" width="56" height="28" style="opacity: 0.7;"> <!-- SVG con la imagen de las nubes. El 'path' son los puntos y segmentos que forman la imagen -->
+                            <path fill="#000" d="M56 26v2h-7.75c2.3-1.27 4.94-2 7.75-2zm-26 2a2 2 0 1 0-4 0h-4.09A25.98 25.98 0 0 0 0 16v-2c.67 0 1.34.02 2 .07V14a2 2 0 0 0-2-2v-2a4 4 0 0 1 3.98 3.6 28.09 28.09 0 0 1 2.8-3.86A8 8 0 0 0 0 6V4a9.99 9.99 0 0 1 8.17 4.23c.94-.95 1.96-1.83 3.03-2.63A13.98 13.98 0 0 0 0 0h7.75c2 1.1 3.73 2.63 5.1 4.45 1.12-.72 2.3-1.37 3.53-1.93A20.1 20.1 0 0 0 14.28 0h2.7c.45.56.88 1.14 1.29 1.74 1.3-.48 2.63-.87 4-1.15-.11-.2-.23-.4-.36-.59H26v.07a28.4 28.4 0 0 1 4 0V0h4.09l-.37.59c1.38.28 2.72.67 4.01 1.15.4-.6.84-1.18 1.3-1.74h2.69a20.1 20.1 0 0 0-2.1 2.52c1.23.56 2.41 1.2 3.54 1.93A16.08 16.08 0 0 1 48.25 0H56c-4.58 0-8.65 2.2-11.2 5.6 1.07.8 2.09 1.68 3.03 2.63A9.99 9.99 0 0 1 56 4v2a8 8 0 0 0-6.77 3.74c1.03 1.2 1.97 2.5 2.79 3.86A4 4 0 0 1 56 10v2a2 2 0 0 0-2 2.07 28.4 28.4 0 0 1 2-.07v2c-9.2 0-17.3 4.78-21.91 12H30zM7.75 28H0v-2c2.81 0 5.46.73 7.75 2zM56 20v2c-5.6 0-10.65 2.3-14.28 6h-2.7c4.04-4.89 10.15-8 16.98-8zm-39.03 8h-2.69C10.65 24.3 5.6 22 0 22v-2c6.83 0 12.94 3.11 16.97 8zm15.01-.4a28.09 28.09 0 0 1 2.8-3.86 8 8 0 0 0-13.55 0c1.03 1.2 1.97 2.5 2.79 3.86a4 4 0 0 1 7.96 0zm14.29-11.86c1.3-.48 2.63-.87 4-1.15a25.99 25.99 0 0 0-44.55 0c1.38.28 2.72.67 4.01 1.15a21.98 21.98 0 0 1 36.54 0zm-5.43 2.71c1.13-.72 2.3-1.37 3.54-1.93a19.98 19.98 0 0 0-32.76 0c1.23.56 2.41 1.2 3.54 1.93a15.98 15.98 0 0 1 25.68 0zm-4.67 3.78c.94-.95 1.96-1.83 3.03-2.63a13.98 13.98 0 0 0-22.4 0c1.07.8 2.09 1.68 3.03 2.63a9.99 9.99 0 0 1 16.34 0z"></path>
+                        </svg>
+                    </p>
+                </div>
+            </article>
+
+        <!-- Footer -->
+        <footer class="wrapper"> <!-- Elemento footer. Se usa para hacer referencia al 'pie de pagina'. En este caso contiene la informacion de contacto y un formulario para mandar un email -->
+            <div class="title">Contact form<a name="contact"></a></div>
+            <section class="container">
+                <h2>Liked what you see?</h2>
+                <p>If you want to get in touch with me, you can leave me a message:</p>
+            </section>
+            <section class="container first">
+                <div class="row">
+                    <section class="col-6 col-12-medium">
+                        <!-- contact form -->
+                        <form method="POST" action="https://formspree.io/whaleaida@gmail.com"> <!-- Formulario que envia un emal a la cuenta 'whaleaida@gmail.com' con la informacion especificada en cada uno de los campos que aparecen abajo -->
+                            <!-- los tags 'required' indican que esos campos son obligatorios, por lo que no se podria enviar el formulario si alguno de ellos esta vacio -->
+                            <div class="row gtr-50">
+                                <div class="col-6 col-12-small">
+                                    <input type="text" required name="name" id="contact-name" placeholder="Name" /> <!-- input donde se rellena el nombre -->
+                                </div>
+                                <div class="col-6 col-12-small">
+                                    <input type="email" required name="_replyto" id="contact-email" placeholder="Email" /> <!-- input donde se recoje el email de la persona. Al ser de tipo 'email' ya reconoce el tipo automaticamente, por lo que indica cuando esta mal formateado, ya que los emails tienen que tener la forma 'nombre@algo.com'. En caso de que el formato del email esté incorrecto, se ha configurado en el CSS una clase ':invalid' que se activa automaticamente y hace que se resalte el input para indicar que hay algo mal -->
+                                </div>
+                                <div class="col-12">
+                                    <textarea name="message" required id="contact-message" placeholder="Message" rows="4" maxlength="1000"></textarea> <!-- zona en la que se escribe el cuerpo del mensaje. Tiene un 'maxlength' para evitar textos excesivamente grandes -->
+                                </div>
+                                <div class="col-12">
+                                    <ul class="actions">
+                                        <li><input type="submit" class="style1" value="Send" /></li> <!-- al pulsar este boton se activa la accion especificada en el tag 'form' de arriba. En este caso es una peticion POST a la URL formspree, que automatiza el envio del correo electronico a la cuenta especificada despues del '?' -->
+                                        <li><input type="reset" class="style2" value="Reset" /></li> <!-- este boton borra toda la informacion que haya en los campos -->
+                                    </ul>
+                                </div>
+                            </div>
+                        </form>
+                    </section>
+                    <!-- social media -->
+                    <div class="col-6 col-12-medium"> <!-- seccion que muesra algunas RRSS con enlaces a cada una de ellas -->
+                        <section class="feature-list small">
+                            <div class="row">
+                                <div class="col-6 col-12-small">
+                                    <section>
+                                        <h3 class="fas fa-comment">Social</h3>
+                                        <p>
+                                            <a href="https://www.instagram.com/aidawhale/">@aidawhale</a><br /> <!-- enlace a mi instagram -->
+                                            <a href="https://aidawhale.github.io/">aidawhale.github.io</a> <!-- enlace a mi usuario de github -->
+                                        </p>
+                                    </section>
+                                </div>
+                                <div class="col-6 col-12-small">
+                                    <section>
+                                        <h3 class="fas fa-envelope">Email</h3>
+                                        <p>
+                                            <a href="mailto:whaleaida@gmail.com">whaleaida@gmail.com</a> <!-- este enlace, en caso de tener un programa en el equipo que lo soporte, abre un gestor de correo electronico donde rellena los campos 'To' con la direccion especificada -->
+                                        </p>
+                                    </section>
+                                </div>
+                            </div>
+                        </section>
+
+                    </div>
+                </div>
+            </section>
+            <section id="copyright" class="container"> <!-- seccion en la que se declara de donde se ha sacado la plantilla del diseño y quien ha hecho las modificaciones sobre la plantilla para adaptarla a las necesidades de la pagina. En http://html5up.net/escape-velocity se puede consultar la plantilla de la cual se ha partido para empezar el desarrollo de esta web, que tiene el proposito de ser una web personal para poder mostrar un portfolio de todos los proyectos que he hecho y en los que estoy participando. Esa plantilla no contiene tags de division del cotenido propios de HTML5, simplemente estructura la pagina usando divs. Como se puede ver en esta pagina, las divisiones empleadas para la estructura general de la pagina son propias de HTML5, lo que supuso la consiguiente modificacion de los ficheros CSS para que se adaptase al nuevo contenido de la pagina -->
+                <ul>
+                    <li>&copy; aidawhale.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li><li>Adapted by: <a href="">AidaWhale</a></li>
+                </ul>
+            </section>
+        </footer>
+
+        <!-- Scripts -->
+            <!-- aqui se hace referencia a todos los scripts de javascript, en ellos se encuentra todo el codigo que se usa a lo largo de la web -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+            <script src="assets/js/main.js"></script>
+            <script src="assets/js/igm.js"></script> <!-- script hecho para la practica -->
+            <script src="assets/js/ambient.min.js"></script> <!-- gestion de la luz ambiental del video -->
+            <script src="assets/js/jquery.stellar.min.js"></script> <!-- gestion del efecto parallax -->
+            <!-- codigo javascript que inicializa todo lo necesario para el correcto comportamiento de la web -->
+            <script type="text/javascript">
+                var ambient = new Ambient();
+                ambient.mount(); // Set ambient light
+                $(window).stellar(); // Init Stellar - parallax effect
+                $('.ambient__visible').attr('loop', true);
+                
+                function ambientLightChanged() {
+                    var a = $('#ambientLightCheckbox'),
+                        light = $('canvas.ambient__shadow');
+                        isCheck = a.hasClass('checked');
+
+                    if (!isCheck) {
+                        light.show();
+                        a.addClass('checked');
+                    } else {
+                        light.hide();
+                        a.removeClass('checked');
+                    }
+                }
+
+                function opacityChanged() {
+                    // set video opacity
+                    var opacity = $('#videoopacity'),
+                        video = $('section.videocontainer').children()[0];
+                    
+                    video.style.opacity = opacity.val();
+                }
+            </script>
+	</body>
+</html>
